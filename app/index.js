@@ -1,6 +1,6 @@
 //Empty Setup (16:52): https://youtu.be/mJ3bGvy0WAY?t=1012
 
-import { View, Text, SafeAreaView } from 'react-native';
+import { View, Text, SafeAreaView, ScrollView } from 'react-native';
 //Built out at (24:56): https://youtu.be/mJ3bGvy0WAY?t=1496
 import { useState } from 'react';
 import { Stack, useRouter } from 'expo-router';
@@ -25,10 +25,25 @@ const Home = () => {
                         <ScreenHeaderBtn iconUrl={icons.menu} dimension="60%" />
                     ),
                     headerRight: () => (
-                        <ScreenHeaderBtn iconUrl={icons.profile} dimension="100%" />
+                        <ScreenHeaderBtn iconUrl={images.profile} dimension="100%" />
                     ),
+                    headerTitle: ""
                 }}
             />
+
+            <ScrollView showsVerticalScrollIndicator={false}>
+
+                <View  style={{ flex: 1, padding: SIZES.medium }} >
+
+                        <Welcome />
+
+                        <Popularjobs />
+
+                        <Nearbyjobs />
+
+                </View>
+
+            </ScrollView>
         </SafeAreaView>
     )
 }
